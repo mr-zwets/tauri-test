@@ -11,9 +11,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Get the current window instance
     const currentWindow = getCurrentWindow();
 
-    // Show the window and maximize it
-    await currentWindow.show();
-    await currentWindow.maximize();
+    // Maximize the window and show it after a short delay
+    currentWindow.maximize();
+    setTimeout(async () => {
+      await currentWindow.show();
+    }, 150);
+
   } catch (error) {
     console.error('Error showing or maximizing the window:', error);
   }
